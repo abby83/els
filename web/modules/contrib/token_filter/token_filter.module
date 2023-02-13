@@ -1,0 +1,30 @@
+<?php
+
+/**
+ * @file
+ * Core functions for the Token Filter module.
+ */
+
+use Drupal\Core\Entity\ContentEntityInterface;
+
+/**
+ * Implements hook_preprocess_HOOK().
+ */
+function token_filter_preprocess_field(&$variables) {
+  if (isset($variables['element']['#object']) && $variables['element']['#object'] instanceof ContentEntityInterface) {
+    $entity = &drupal_static('token_filter_entity');
+    $entity = $variables['element']['#object'];
+  }
+}
+
+/**
+ * Implements hook_migration_plugins_alter().
+ */
+function token_filter_migration_plugins_alter(array &$migrations) {
+  if (isset($migrations['d7_filter_format'])) {
+    $migration = &$migrations['d7_filter_format'];
+
+    // Add mapping from filter_tokens to token_filter for D7 migrations.
+    $migration['process']['filters']['process']['id']['map']['filter_tokens'] = 'token_filter';
+  }
+}

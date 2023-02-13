@@ -1,0 +1,21 @@
+<?php
+
+/**
+  * Bootstrap sub-theme
+  *
+  * Custom PHP goes here
+  */
+  
+function els_theme_preprocess(array &$variables) {
+	//Set Base path
+	$variables['base_path'] = base_path();
+	
+	//Host Name
+	$variables['host_name'] = \Drupal::request()->getHost();
+	
+	//Set siet directory
+	$variables['directory'] = \Drupal::theme()->getActiveTheme()->getPath();
+	
+	//Set theme path
+	$variables['theme_path'] = $variables['base_path'] . $variables['directory'];
+}
