@@ -20,6 +20,8 @@
         "drupal/core-composer-scaffold": "^9.3",
         "drupal/core-project-message": "^9.3",
         "drupal/core-recommended": "^9.3",
+        "drupal/custom_breadcrumbs": "1.0",
+        "drupal/easy_breadcrumb": "2.0",
         "drupal/token_filter": "2.0"
     },
     "conflict": {

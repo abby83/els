@@ -35,8 +35,17 @@ h4,
 h5,
 h6,
 .font-primary {
-  font-family: "Roboto", sans-serif;
+  font-family: "Roboto", sans-serif!important;
 }
+
+h1.page-header {
+    font-family: "Roboto", sans-serif!important;
+    font-weight: 300!important;
+    border-bottom: none!important;
+    font-size: 26px;
+    padding: 20px 0 0 5px;
+}
+
 
 /*--------------------------------------------------------------
 # Back to top button

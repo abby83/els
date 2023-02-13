@@ -10,6 +10,7 @@ regions:
     main_navigation: Main navigation
     header: Site Header
     breadcrumbs : Site Breadcrumbs
+    page_title : Page Title
     bottom_blocks_1 : Bottom Blocks 1
     bottom_blocks_2 : Bottom Blocks 2
     bottom_blocks_3 : Bottom Blocks 3
