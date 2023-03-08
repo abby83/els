@@ -19,3 +19,14 @@ function els_theme_preprocess(array &$variables) {
 	//Set theme path
 	$variables['theme_path'] = $variables['base_path'] . $variables['directory'];
 }
+
+
+/**
+ * 
+ **/
+function els_theme_theme_suggestions_alter(array &$suggestions, array $variables, $hook) {
+
+	if ($hook == 'form' & !empty($variables['element']['#id'])) {
+		$suggestions[] = 'form__' . str_replace('-', '_', $variables['element']['#id']);
+	}
+}

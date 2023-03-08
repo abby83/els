@@ -1,0 +1,36 @@
+<section class="contact" data-aos="fade-up" data-aos-easing="ease-in-out" data-aos-duration="500">
+      <div class="container">
+
+        <div class="row justify-content-center">
+			<div class="section-title">
+					<h2>Member's Sign In</h2>
+			</div>
+          <div class="col-lg-6">
+			<form{{ attributes }}>
+              <div class="row">
+                <div class="mt-3 form-group">
+                  <input autocorrect="none" autocapitalize="none" spellcheck="false" autofocus="autofocus" data-drupal-selector="edit-name" class="form-text required error form-control" type="text" id="edit-name" name="name" value="dasdad" size="60" maxlength="60" required="required" aria-required="true" aria-invalid="true" title="" data-toggle="tooltip" data-original-title="Enter your Executive Luxury Service Inc username." placeholder="Your Email">
+                </div>
+              </div>
+              <div class="form-group mt-3">
+                <input data-drupal-selector="edit-pass" aria-describedby="edit-pass--description" class="form-text required form-control" type="password" id="edit-pass" name="pass" size="60" maxlength="128" required="required" aria-required="true" title="" data-toggle="tooltip" data-original-title="Enter the password that accompanies your username." placeholder="Password">
+				
+              </div>
+             
+              <div class="my-3">
+                <div class="error-message">{{ element.actions.submit }}</div>
+              </div>
+				{{ element.form_build_id }} {# required #}
+				{{ element.form_id }} {# required #}
+              <div class="text-center">
+				<button data-drupal-selector="edit-submit" type="submit" id="edit-submit" name="op" value="Log in"><span class="icon glyphicon glyphicon-log-in" aria-hidden="true"></span>
+Log in</button>
+				<p><a href="{{ url('<front>') }}/user/password" class="loginforgot">Forgot Password?</a></p>
+			  </div>
+            </form>
+          </div>
+
+        </div>
+
+      </div>
+    </section>

@@ -1,0 +1,4 @@
+services:
+  els_utils.mail:
+    class: Drupal\els_utils\Services\ElsMail
+    arguments: ['@plugin.manager.mail','@current_user']

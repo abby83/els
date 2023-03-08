@@ -1,0 +1,24 @@
+<?php
+
+/**
+ * @file
+ * Contains els_utils.module.
+ */
+
+
+/**
+ * Implements hook_theme().
+ *
+ */
+function els_utils_theme($existing, $type, $theme, $path) {
+
+	$items = [
+		'refer_to_us_mail' => [
+			'template' => 'refere_to_us_mail_body',
+			'variables' => array('comp_name' => NULL, 'cont_person' => NULL, 'comp_email' => NULL, 'cont_number' => NULL, 'comp_remarks' => NULL, 'sender' => NULL),
+		],
+	];
+	return $items;
+}
+
+

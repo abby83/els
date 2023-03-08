@@ -3,7 +3,7 @@
     <div class="container d-flex justify-content-between align-items-center">
 
       <div class="logo">
-        <a href="index.html"><img src="{{theme_path}}/img/l-logo.png" alt="" class="img-fluid"></a>
+        <a href="{{base_path}}"><img src="{{theme_path}}/img/l-logo.png" alt="" class="img-fluid"></a>
       </div>
 
       <nav id="navbar" class="navbar">
@@ -18,6 +18,13 @@
   <section id="hero" class="d-flex justify-cntent-center align-items-center">
     <div id="heroCarousel" class="container carousel carousel-fade" data-bs-ride="carousel" data-bs-interval="5000">
 		{{ page.header_banner }}
+		<a class="carousel-control-prev" href="#heroCarousel" role="button" data-bs-slide="prev">
+			<span class="carousel-control-prev-icon bx bx-chevron-left" aria-hidden="true"></span>
+		</a>
+
+		<a class="carousel-control-next" href="#heroCarousel" role="button" data-bs-slide="next">
+			<span class="carousel-control-next-icon bx bx-chevron-right" aria-hidden="true"></span>
+		</a>
     </div>
   </section><!-- End Hero -->
 

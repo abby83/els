@@ -1728,13 +1728,15 @@ section.services {
   margin-bottom: 0;
 }
 
-.contact .php-email-form {
+.contact .user-login-form,
+.refer-to-us {
   box-shadow: 0 0 30px rgba(214, 215, 216, 0.6);
   padding: 30px;
   margin-bottom: 30px;
+  margin-top: 15px;
 }
 
-.contact .php-email-form .error-message {
+.contact .user-login-form .error-message {
   display: none;
   color: #fff;
   background: #ed3c0d;
@@ -1743,11 +1745,11 @@ section.services {
   font-weight: 600;
 }
 
-.contact .php-email-form .error-message br+br {
+.contact .user-login-form .error-message br+br {
   margin-top: 25px;
 }
 
-.contact .php-email-form .sent-message {
+.contact .user-login-form .sent-message {
   display: none;
   color: #fff;
   background: #18d26e;
@@ -1756,14 +1758,14 @@ section.services {
   font-weight: 600;
 }
 
-.contact .php-email-form .loading {
+.contact .user-login-form .loading {
   display: none;
   background: #fff;
   text-align: center;
   padding: 15px;
 }
 
-.contact .php-email-form .loading:before {
+.contact .user-login-form .loading:before {
   content: "";
   display: inline-block;
   border-radius: 50%;
@@ -1776,27 +1778,33 @@ section.services {
   animation: animate-loading 1s linear infinite;
 }
 
-.contact .php-email-form input,
-.contact .php-email-form textarea {
+.contact .user-login-form input,
+.contact .user-login-form textarea,
+.refer-to-us textarea,
+.refer-to-us input {
   border-radius: 0;
   box-shadow: none;
   font-size: 14px;
 }
 
-.contact .php-email-form input::focus,
-.contact .php-email-form textarea::focus {
+.contact .user-login-form input::focus,
+.refer-to-us input::focus,
+.contact .user-login-form textarea::focus,
+.refer-to-us textarea::focus {
   background-color: #fc1d04 ;
 }
 
-.contact .php-email-form input {
-  padding: 10px 15px;
+.contact .user-login-form input,
+.refer-to-us input {
+  padding: 20px 15px!important;
 }
 
-.contact .php-email-form textarea {
+.contact .php-email-form textarea,
+.refer-to-us textarea {
   padding: 12px 15px;
 }
 
-.contact .php-email-form button[type=submit] {
+.contact .user-login-form button[type=submit] {
   background: #fc1d04 ;
   border: 0;
   padding: 10px 24px;
@@ -1804,7 +1812,17 @@ section.services {
   transition: 0.4s;
 }
 
-.contact .php-email-form button[type=submit]:hover {
+.refer-to-us button#edit-submit {
+  background: #fc1d04 ;
+  border: 0;
+  padding: 10px 24px;
+  color: #fff;
+  transition: 0.4s;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.contact .user-login-form button[type=submit]:hover {
   background: #8dbad2;
 }
 
@@ -2530,5 +2548,17 @@ section.services {
 --------------------------------------------------------------*/
 a.loginforgot {
     font-size: 11px;
-    color: #68A4C4;
+    color: #68A4C4!important;
+}
+
+.section-title {
+    padding: 45px 0px 6px 0px;
+}
+
+.toolbar-tray a, .toolbar-tray a:visited {
+	text-decoration: none!important;
+    color: #565656!important;
+}
+.row.justify-content-center {
+	--bs-gutter-x: 0!important;
 }
