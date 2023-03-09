@@ -181,6 +181,15 @@
             'aliases' => array(),
             'dev_requirement' => false,
         ),
+        'drupal/captcha' => array(
+            'pretty_version' => '1.9.0',
+            'version' => '1.9.0.0',
+            'reference' => '8.x-1.9',
+            'type' => 'drupal-module',
+            'install_path' => __DIR__ . '/../../modules/contrib/captcha',
+            'aliases' => array(),
+            'dev_requirement' => false,
+        ),
         'drupal/core' => array(
             'pretty_version' => '9.5.3',
             'version' => '9.5.3.0',

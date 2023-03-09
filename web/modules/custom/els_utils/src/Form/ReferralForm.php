@@ -23,7 +23,7 @@ class ReferralForm extends FormBase {
 								<div class="section-title">
 									<h2>'.t('Refer To Us').'</h2>
 								</div>
-								<div class="col-lg-7"><div class="text-center">'.t("ELS team welcome's highly valued customer and onboard them as our premium members. We will appreciate your effort to bring close the your premium members from every corner of the Globe ").'</div>';
+								<div class="col-lg-7" data-aos="fade-up" date-aos-delay="0"><div class="text-center">'.t("ELS team welcome highly valued customer and onboard them as our premium members. We will appreciate your effort to bring close the premium members from every corner of the Globe ").'</div>';
 		$form['#suffix'] = '</div></div>';
 		
 		$form['company_name'] = array(
@@ -52,6 +52,11 @@ class ReferralForm extends FormBase {
 		  '#title' => ('Other Remarks:'),
 		  
 		);
+		
+		$form['my_captcha_element'] = array(
+			'#type' => 'captcha',
+		);
+		
 		$form['actions']['#type'] = 'actions';
 		$form['actions']['submit'] = array(
 		  '#type' => 'submit',
