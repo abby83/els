@@ -1,0 +1,16 @@
+<?php
+
+/**
+ * Implements hook_theme().
+ *
+ */
+function els_profile_theme($existing, $type, $theme, $path) {
+
+	$items = [
+		'user_account' => [
+			'template' => 'user-account',
+			'variables' => array('user' => NULL),
+		],
+	];
+	return $items;
+}

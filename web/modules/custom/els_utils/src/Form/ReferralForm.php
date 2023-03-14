@@ -76,10 +76,49 @@ class ReferralForm extends FormBase {
 	public function submitForm(array &$form, FormStateInterface $form_state) {
 		$user = \Drupal\user\Entity\User::load(\Drupal::currentUser()->id());
 		
-		$send_mail = new \Drupal\Core\Mail\Plugin\Mail\PhpMail(); 
+		$to =\Drupal::config('system.site')->get('mail');
+		$from = $user->get('mail')->value;
+		$sender_name = $user->get('name')->value;
+		$fromName = $sender_name;
+		 
+		$subject = t("Customer reference to review");
+		
+		$comp_name = $form_state->getValue('company_name') ;
+		$cont_person = $form_state->getValue('contact_person') ;
+		$comp_email = $form_state->getValue('company_email') ;
+		$cont_number = $form_state->getValue('company_phone') ;
+		$comp_remarks = $form_state->getValue('other_remarks') ;
+		$renderable = [
+			"#theme" => "refer_to_us_mail",
+			"#comp_name" => $comp_name,
+			"#cont_person" => $cont_person,
+			"#comp_email" => $comp_email,
+			"#cont_number" => $cont_number,
+			"#comp_remarks" => $comp_remarks,
+			"#sender" => $sender_name,
+		];
+		$mail_body = \Drupal::service('renderer')->renderPlain($renderable);
+		
+		$headers = "MIME-Version: 1.0" . "\r\n"; 
+		$headers .= "Content-type:text/html;charset=UTF-8" . "\r\n"; 
+		 
+		// Additional headers 
+		$headers .= 'From: '.$fromName.'<'.$from.'>' . "\r\n"; 
+		$result = mail($to, $subject, $mail_body, $headers);
+		if($result)
+		{
+			\Drupal::messenger()->addStatus(t('Thank You for valuable reference to Executive Luxury Service Inc. Our team will review the referred customer and soon onboard them to ELS services.'));
+		}
+		else
+		{
+			\Drupal::messenger()->addError(t('Unable to send emails, please contact administrator!'));
+		}
+		
+		
+		/*$send_mail = new \Drupal\Core\Mail\Plugin\Mail\PhpMail(); 
 		$from = $user->get('mail')->value;
 		$to = \Drupal::config('system.site')->get('mail');
-		$sender_name = $user->get('name')->value;
+		$sender_name = $user->get('mail')->value;
 		
 		$comp_name = $form_state->getValue('company_name') ;
 		$cont_person = $form_state->getValue('contact_person') ;
@@ -90,7 +129,7 @@ class ReferralForm extends FormBase {
 		$message["headers"] = array("content-type" => "text/html",
 									"MIME-Version" => "1.0",
 									"reply-to" => $from,
-									"from" => "sender name <'".$user->get('name')->value."'>"
+									"from" => "sender name <".$user->get('mail')->value.">"
 									);
 		$message["to"] = $to;
 		$message["subject"] = t("Customer reference to review");
@@ -106,6 +145,7 @@ class ReferralForm extends FormBase {
 		];
 		$mail_body = \Drupal::service('renderer')->renderPlain($renderable);
 		$message["body"] = $mail_body;
+
 		
 		$result = $send_mail->mail($message);
 		
@@ -113,6 +153,6 @@ class ReferralForm extends FormBase {
 			\Drupal::messenger()->addStatus(t('Thank You for valuable reference to Executive Luxury Service Inc. Our team will review the referred customer and soon onboard them to ELS services.'));
 		} else {
 			\Drupal::messenger()->addError(t('Unable to send emails, please contact administrator!'));
-		}
+		}*/
   }
 }

@@ -1,0 +1,7 @@
+els_profile.member_account:
+  path: '/user-account'
+  defaults:
+    _controller: '\Drupal\els_profile\Controller\AccountController::userDetails'
+    _title: 'Member Account'
+  requirements:
+    _user_is_logged_in: "TRUE"

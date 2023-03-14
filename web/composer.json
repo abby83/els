@@ -24,6 +24,9 @@
         "drupal/core-recommended": "^9.3",
         "drupal/custom_breadcrumbs": "1.0",
         "drupal/easy_breadcrumb": "2.0",
+        "drupal/google_map_field": "2.0",
+        "drupal/profile": "1.7",
+        "drupal/simple_gmap": "3.0",
         "drupal/swiftmailer": "2.4",
         "drupal/token_filter": "2.0"
     },

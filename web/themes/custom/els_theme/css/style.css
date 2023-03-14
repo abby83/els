@@ -2562,3 +2562,60 @@ a.loginforgot {
 .row.justify-content-center {
 	--bs-gutter-x: 0!important;
 }
+
+.field--name-field-map .field--label {
+    display: none;
+}
+
+.field--name-field-map {
+    box-shadow: 0px 0px 30px rgb(127 137 161 / 25%);
+	text-align: center;
+}
+.bx {
+    color: #fc1d04;
+    font-size: 24px;
+}
+.field--name-field-map iframe {
+	padding: 6px 3px 2px 2px;
+} 
+@media (max-width: 768px) {
+  .field--name-field-map iframe {
+		width: 100%;
+		height: 100%;
+		padding: 8px 7px 2px 6px;
+	} 
+}
+.placeholder {
+	background-color: whitesmoke;
+}
+
+.gradient-custom {
+	/* fallback for old browsers */
+	background: #f6d365;
+
+	/* Chrome 10-25, Safari 5.1-6 */
+	background: -webkit-linear-gradient(to right bottom, #fff, #1e4356);
+
+	/* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+	background: linear-gradient(to right bottom, #fff, #1e4356)
+}
+
+.profile-button{
+    background-color: #fc1d04;
+    background: linear-gradient(to right bottom, #fff, #fc1d04);
+    border-color:#fff!important;
+    font-weight: bold!important;
+	font-size: 18px;
+}
+section.profile-trip {
+    padding: 0 0 30px 0;
+}
+section.profile-account {
+    padding: 0 0 0 0;
+}
+.card-body.p-4 h6 {
+    font-size: 15px;
+}
+.card.mb-3 {
+    box-shadow: 0px 0px 30px rgb(132 142 168 / 29%);
+}

@@ -1,0 +1,5 @@
+name: ELS Profile
+type: module
+description: Module for implementing ELS Members profile
+core_version_requirement: ^8.8 || ^9
+package: ELS
